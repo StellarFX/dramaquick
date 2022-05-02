@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// > Note de Stellar :
+// Après avoir modifié la structure de la base de données, il faut run `npx prisma migrate dev` afin d'update le tout
+// Et ensuite, si ça n'affiche pas "Generated Prisma Client", run la commande `npx prisma generate` afin regénérer le client
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+// model User {
+//   id        Int       @id @default(autoincrement())
+//   createdAt DateTime  @default(now())
+//   name      String?   @default("Utilisateur")
+//   password  String    
+//   role      Role      @default(USER)
+// }
+
+model Question {
+  id          Int         @id @default(autoincrement())
+  quiz        Quiz        @relation(fields: [quizId], references: [id])
+  quizId      Int
+  name        String      @default("Question")
+  // TODO input_type, description...
+}
+
+model Quiz {
+  id          Int         @id @default(autoincrement())
+  questions   Question[]  
+  name        String      @default("Quiz")
+  description String?      
+}
+
+model DramaSession {
+  id          Int        @id @default(autoincrement())
+  author      String?    @default("Inconnu")
+  authorId    String?
+  startingAt  DateTime  
+  duration    Int       
+}
