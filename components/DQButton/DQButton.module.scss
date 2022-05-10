@@ -1,0 +1,24 @@
+$main: #34ffad;
+
+.dqbutton {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    
+    cursor: pointer;
+
+    &.dqbutton_filled {
+        background-color: $main;
+        color: #0D241B;
+    }
+
+    &.dqbutton_outline {
+        background: none;
+        border: 2px solid #00E589;
+        color: #00E589;
+    }
+}

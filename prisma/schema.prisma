@@ -18,29 +18,29 @@ datasource db {
 //   id        Int       @id @default(autoincrement())
 //   createdAt DateTime  @default(now())
 //   name      String?   @default("Utilisateur")
-//   password  String    
+//   password  String
 //   role      Role      @default(USER)
 // }
 
 model Question {
-  id          Int         @id @default(autoincrement())
-  quiz        Quiz        @relation(fields: [quizId], references: [id])
-  quizId      Int
-  name        String      @default("Question")
+  id     Int    @id @default(autoincrement())
+  quiz   Quiz   @relation(fields: [quizId], references: [id])
+  quizId String
+  name   String @default("Question")
   // TODO input_type, description...
 }
 
 model Quiz {
-  id          Int         @id @default(autoincrement())
-  questions   Question[]  
-  name        String      @default("Quiz")
-  description String?      
+  id          String     @id @default(cuid())
+  questions   Question[]
+  name        String     @default("Quiz")
+  description String?
 }
 
 model DramaSession {
-  id          Int        @id @default(autoincrement())
-  author      String?    @default("Inconnu")
-  authorId    String?
-  startingAt  DateTime  
-  duration    Int       
+  id         Int      @id @default(autoincrement())
+  author     String?  @default("Inconnu")
+  authorId   String?
+  startingAt DateTime
+  duration   Int
 }

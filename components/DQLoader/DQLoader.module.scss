@@ -1,0 +1,45 @@
+$main: #34ffad;
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    background-color: #fafafa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+    background: linear-gradient(27deg, rgba(52,255,173,1)0%, rgba(203,239,129,1) 100%);
+
+    pre {
+        overflow: auto;
+        display: none;
+        // easter egg lmao
+    }
+
+    .loading_bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $main;
+        animation: scale 1s ease-in-out;
+        height: 10px;
+    }
+
+    &.loader_hidden {
+        transform: translateY(-100vh);
+    }
+
+    @keyframes scale {
+        from {
+            width: 0%;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+}

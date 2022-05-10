@@ -1,0 +1,56 @@
+$main: #34FFAD;
+
+.main {
+
+    .title {
+        width: 35rem;
+
+        h1 {
+            font-weight: 600;
+            font-size: 2.5rem;
+        }
+
+        p {
+            width: 85%;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    padding: 4rem 15rem;
+
+    @media screen and (max-width: 1600px) {
+        padding: 4rem 10vw;
+    }
+
+    .stats {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        max-width: 28rem;
+
+        & > .stats_element {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            width: 8rem;
+            word-break: break-word;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: unset;
+                color: $main;
+                font-weight: 600;
+            }
+    
+            span {
+                font-weight: 400;
+                color: #273C33;
+                font-size: 1.1rem;
+                hyphens: auto;
+            }
+        }
+    }
+
+}
